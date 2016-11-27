@@ -1,0 +1,51 @@
+:root {
+  --table-padding: 3px;
+  --table-border: 1px;
+  --width-table: 8000px;
+  --height-table: auto;
+}
+
+table {
+  white-space: nowrap;
+  border-collapse: collapse;
+  font-family: "Helvetica";
+  font-weight: 200;
+}
+
+th,
+tr,
+td {
+  border: var(--table-border) solid #CCC;
+}
+
+td,
+th {
+  padding: var(--table-padding);
+}
+
+
+thead {
+  position: relative;
+  background: black;
+  color: white;
+}
+
+.mainContainer {
+  width: 500px;
+  height: 500px;
+  overflow: auto;
+  position: relative;
+  top: 0;
+}
+
+.headerContainer {
+  white-space: nowrap;
+  border-collapse: collapse;
+  font-family: "Helvetica";
+  font-weight: 200;
+}
+
+.headerContainer thead tr th {
+  display: inline-block;
+  border: 1px solid #ccc;
+}
