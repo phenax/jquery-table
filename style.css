@@ -1,28 +1,17 @@
-:root {
-  --table-padding: 3px;
-  --table-border: 1px;
-  --width-table: 8000px;
-  --height-table: auto;
-}
-
 table {
   white-space: nowrap;
   border-collapse: collapse;
   font-family: "Helvetica";
   font-weight: 200;
+  background: white;
 }
 
 th,
 tr,
 td {
-  border: var(--table-border) solid #CCC;
+  border: 1px solid #CCC;
+  padding: 3px;
 }
-
-td,
-th {
-  padding: var(--table-padding);
-}
-
 
 thead {
   position: relative;
@@ -31,8 +20,8 @@ thead {
 }
 
 .mainContainer {
-  width: 500px;
-  height: 500px;
+  width: auto;
+  height: auto;
   overflow: auto;
   position: relative;
   top: 0;
