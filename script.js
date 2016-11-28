@@ -1,18 +1,23 @@
 // Take the widths of the header
 var headerWidths = [];
 
+// Cache elements as much as possible
+var $mainContainer= $('.mainContainer');
+var $headerContainer= $('.headerContainer');
+
+
 var headerRow = $('thead').children('tr').children('th');
 $(headerRow).each(function() {
   headerWidths.push($(this).width());
 });
 
 // Create new div containing the header
-$(".headerContainer").css("position", "absolute");
+$headerContainer.css("position", "absolute");
 $('thead').clone().appendTo('.headerContainer table').removeClass("headerRow");
 $(".headerRow").css("visibility", "hidden");
 
 // Resizing the columns
-$('.headerContainer thead th').each(function() {
+$headerContainer.find('thead th').each(function() {
   var i = $(this).index();
 
   $(this).attr("id", "header" + i);
@@ -20,7 +25,10 @@ $('.headerContainer thead th').each(function() {
 });
 
 // Scroll event and repositioning
-$(window).scroll(function(event) {
-  var scrollY = $(window).scrollTop();
-  $('.headerContainer').css('transform', 'translate(0px,' + scrollY + 'px )');
+// 
+// The scroll is happening to the main container so 
+// thats where the event needs to be bound
+$mainContainer.on('scroll', function(event) {
+  var scrollY = $mainContainer.scrollTop();
+  $headerContainer.css('transform', 'translate(0px,' + scrollY + 'px )');
 });

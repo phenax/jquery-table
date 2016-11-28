@@ -1,7 +1,9 @@
 table {
   white-space: nowrap;
   border-collapse: collapse;
-  font-family: "Helvetica";
+
+  /* Need fallbacks */
+  font-family: "Helvetica", "Arial", "sans-serif";
   font-weight: 200;
   background: white;
 }
@@ -20,11 +22,13 @@ thead {
 }
 
 .mainContainer {
-  width: auto;
-  height: auto;
+  /*width: auto;
+  height: auto;*/
   overflow: auto;
   position: relative;
   top: 0;
+  width: 500px;
+  height: 400px;
 }
 
 .headerContainer {
